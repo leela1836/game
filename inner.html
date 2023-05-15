@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GAME</title>
+    <style>
+        body {
+
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-align: center;
+            background: powderblue;
+        }
+        header {
+            background-color: red;
+            align-items: flex-end;
+        }
+        #box{
+            height: 25px;
+            width: 500px;
+            position: relative;
+        }
+        #btn {
+            width: 60px;
+            height: 30px;
+        }
+
+        #txt {
+            color: blue;
+            font-size :40px;
+            text-shadow: 2px 2px 4px black;
+        }
+        #pa {
+            font-size: 30px;
+            text-shadow: 2px 2px 4px red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const guess = Math.floor(Math.random()*10+1)
+        let guesses = 0;
+        function first(){
+            guesses++;
+            let num = document.getElementById("box").value;
+            if(num == guess){
+                alert("SUPER  you did it in "+guesses+" guesses");
+            }
+            else if(num<guess){
+                alert("too small! try a big one");
+            }
+            else{
+                alert("too large! try a small one")
+            }
+        }
+    </script>
+    <header>
+        <a href="#" id="home">HOME</a>
+        <a href="#" id="about">ABOUT</a>
+        <h1 style="color: white;" id="h1">GAME</h1><br>
+    </header>
+    <form action="#">
+    <p style="color:green" id="pa"> pick a number between 1 - 10 number</p>
+    <label for="text" id="txt">Enter your choice:</label><br>
+    <input type="text" id="box" style="color:red"><br>
+    <button id="btn" onclick="first()">submit</button><br>
+
+    </form>
+</body>
+</html>
